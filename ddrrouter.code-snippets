@@ -1,0 +1,42 @@
+{
+	// Place your 全局 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"ddrrouter": {
+		"prefix": "ddrrouter",
+		"body": [
+			"import React from \"react\"",
+			"import { BrowserRouter as Router, Route, Link } from \"react-router-dom\"",
+			"import Ca from \"./Ca\"",
+			"import Cb from \"./Cb\"",
+			"",
+			"class CRouter extends React.Component {",
+			"	render() {",
+			"		return (",
+			"			<div>",
+			"				<Router>",
+			"					<Route path=\"/Ca\" component={Ca}></Route>",
+			"					<Route path=\"/Cb\" component={Cb}></Route>",
+			"					<div>",
+			"						<Link to={`/Ca`}>Ca</Link>",
+			"						<Link to={`/Cb`}>Cb</Link>",
+			"					</div>",
+			"				</Router>",
+			"",
+			"			</div>",
+			"		)",
+			"	}",
+			"",
+			"	handelCaClick() {",
+			"		console.log("222")",
+			"	}",
+			"}",
+			"export default CRouter",
+		],
+		"description": "react router"
+	}
+}
