@@ -21,6 +21,6 @@
 			"    }",
 			"}",
 		],
-		"description": "ddvdevserver"
+		"description": "ddvdevserver vue 本地跨域代理"
 	}
 }
