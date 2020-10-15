@@ -1,0 +1,55 @@
+{
+	// Place your 全局 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"ddjieliu": {
+		"prefix": "ddjieliu",
+		"body": [
+			"/**",
+			" * @desc 函数节流",
+			" * @param func 函数",
+			" * @param wait 延迟执行毫秒数",
+			" * @param type 1 表时间戳版，2 表定时器版",
+			" */",
+			"function throttle(func, wait, type) {",
+			"    if (type === 1) {",
+			"        let previous = 0;",
+			"    } else if (type === 2) {",
+			"        let timeout;",
+			"    }",
+			"    return function () {",
+			"        let context = this;",
+			"        let args = arguments;",
+			"        if (type === 1) {",
+			"            let now = Date.now();",
+			"",
+			"            if (now - previous > wait) {",
+			"                func.apply(context, args);",
+			"                previous = now;",
+			"            }",
+			"        } else if (type === 2) {",
+			"            if (!timeout) {",
+			"                timeout = setTimeout(() => {",
+			"                    timeout = null;",
+			"                    func.apply(context, args)",
+			"                }, wait)",
+			"            }",
+			"        }",
+			"    }",
+			"}",
+			"",
+			"// 用法",
+			"content.onmousemove = throttle(count,1000);",
+			"let vvv = throttle(count, 1000, 1);",
+			"setInterval(() => {",
+			"	console.log(111)",
+			"	vvv()",
+			"}, 200);",
+		],
+		"description": "ddjieliu 节流函数 指连续触发事件但是在 n 秒中只执行一次函数。即 2n 秒内执行 2 次... 。节流如字面意思，会稀释函数的执行频率。"
+	}
+}

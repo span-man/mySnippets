@@ -1,0 +1,56 @@
+{
+	// Place your 全局 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"ddfangdou": {
+		"prefix": "ddfangdou",
+		"body": [
+			"// 合成版 默认执行的是 执行最后一次",
+			"/**",
+			"   * @desc 函数防抖",
+			"   * @param func 目标函数",
+			"   * @param wait 延迟执行毫秒数",
+			"   * @param immediate true - 立即执行， false - 延迟执行",
+			"   */",
+			"function debounce(func, wait, immediate) {",
+			"    let timer;",
+			"    return function () {",
+			"        let context = this,",
+			"            args = arguments;",
+			"",
+			"        if (timer) clearTimeout(timer);",
+			"        if (immediate) {",
+			"            let callNow = !timer;",
+			"            timer = setTimeout(() => {",
+			"                timer = null;",
+			"            }, wait);",
+			"            if (callNow) func.apply(context, args);",
+			"        } else {",
+			"            timer = setTimeout(() => {",
+			"                func.apply",
+			"            }, wait)",
+			"        }",
+			"    }",
+			"}",
+			"",
+			"content.onmousemove = debounce(count, 1000);",
+			"",
+			"// function aaa() {",
+			"//     console.log(\"立即执行 然后 x 秒之后再执行\")",
+			"// }",
+			"// // let bbb = debounce(aaa, 1000, true)",
+			"// let bbb = debounce(aaa, 1000, false)",
+			"// setInterval(() => {",
+			"//     console.log(111)",
+			"//     debounce(()=>{",
+			"//         console.log(\"立即执行 然后 x 秒之后再执行\")",
+			"//     }, 1000, true)",
+			"// }, 200)"
+		],
+		"description": "ddfangdou 防抖函数"
+	}
+}
